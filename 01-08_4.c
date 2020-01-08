@@ -7,8 +7,8 @@ struct myst {
 
 struct myst cul(struct myst x, struct myst y) {
     struct myst wk;
-    wk.d1 = pow(pow(x.d1, 2) + pow(y.d1, 2), 0.5);
-    wk.d2 = pow(pow(x.d2, 2) + pow(y.d2, 2), 0.5);
+    wk.d1 = pow(pow(x.d1, 2) + pow(x.d2, 2), 0.5);
+    wk.d2 = pow(pow(y.d1, 2) + pow(y.d2, 2), 0.5);
     return wk;
 }
 
