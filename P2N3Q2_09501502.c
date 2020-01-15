@@ -1,79 +1,20 @@
 #include <stdio.h>
-#include <math.h>
-#define pi 3.1415
-
-int funNum(void);
-int loopCheck(int num);
-double inPar(void);
-void fun1(int num);
-void fun2(int num);
-void fun3(int num);
-
-int funNum(void) {
-    int num;
-    printf("Input a function number:\n");
-    printf("1) cos, 2) exp, 3) fabs\n> ");
-    scanf("%d", &num);
-    return num;
-}
-
-int loopCheck(int num) {
-    if(num == -1) {
-        printf("The function calculator quits.\n");
-        return 0;
-
-    } else if (num == 1) {
-        fun1(num);
-        printf("\n");
-        return 1;
-
-    } else if (num == 2) {
-        fun2(num);
-        printf("\n");
-        return 1;
-
-    } else if (num == 3) {
-        fun3(num);
-        printf("\n");
-        return 1;
-        
-    } else {
-        printf("Input a correct function number from 1 to 3.\n");
-        printf("\n");
-        return 1;
-    }
-}
-
-double inPar(void) {
-    double value;
-    printf("Input the parameter:\n> ");
-    scanf("%lf", &value);
-    return value;
-}
-
-void fun1(int num) {
-    double value;
-    value = inPar();
-    printf("cos(%3.2f) is %.4f.\n", value, cos(value*pi/180));
-}
-
-void fun2(int num) {
-    double value;
-    value = inPar();
-    printf("exp(%.2f) is %.4f.\n", value, exp(value));
-}
-
-void fun3(int num) {
-    double value;
-    value = inPar();
-    printf("abs(%.2f) is %.4f.\n", value, fabs(value));
-}
 
 int main(void) {
-    int loop = 1;
-    while(loop) {
-        int num = funNum();
-        loop = loopCheck(num);
+    FILE *fin;
+    fin = fopen("score.csv", "r");
+
+    int i=0, j, student[80], eng[80], math[80], japa[80], sci[80];
+    char raw[256]={}, user[256]={};
+    while(fgets(raw, 256, fin)!=NULL) {
+        printf("%s", raw);
     }
-    return 0;
+
+
+        // for(i=0; ss[i]=='\n'; i++) {
+        //     user1[i] = ss[i];
+        // }
+        // fscanf(user1, "%d, %d, %d, %d, %d", &student[0], &eng[0], &math[0], &japa[0], &sci[0]);
+
+    // printf("%d", student[0]);
 }
