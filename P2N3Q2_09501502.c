@@ -5,10 +5,16 @@ int main(void) {
     fin = fopen("score.csv", "r");
 
     int i=0, j, student[80], eng[80], math[80], japa[80], sci[80];
-    char raw[256]={}, user[256]={};
+    char raw[256]={}, user[256][256]={};
     while(fgets(raw, 256, fin)!=NULL) {
         printf("%s", raw);
+        for(j=0; raw[j]!='\0'; j++) {
+            user[i][j] = raw[j];
+        }
+        printf(">%d %s", i, user[i]);
+        i++;
     }
+
 
 
         // for(i=0; ss[i]=='\n'; i++) {
