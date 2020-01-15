@@ -8,13 +8,9 @@ int main(void) {
     char raw[256]={}, user[80][256]={};
     for(i=0; fgets(raw, 256, fin)!=NULL; i++) {
         // printf("%s", raw);
-        for(j=0; raw[j]!='\0'; j++) {
-            user[i][j] = raw[j];
-        }
-        // printf(">%d %s", i, user[i]);
+        fscanf(fin, "%d, %d, %d, %d, %d", &student[i], &eng[i], &math[i], &japa[i], &sci[i]);
+        printf("%d, %d, %d, %d, %d\n", student[i], eng[i], math[i], japa[i], sci[i]);
     }
-    scanf(user[0], "%d, %d, %d, %d, %d", &student[0], &eng[0], &math[0], &japa[0], &sci[0]);
-    printf("%d", math[0]);
 
 
 
