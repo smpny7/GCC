@@ -1,15 +1,23 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "clang++ build active file",
-        "type": "shell",
-        "command": "clang++",
-        "args": ["${fileBasename}", "-o", "${fileBasenameNoExtension}.out", "-g"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
-      }
+        {
+            "type": "shell",
+            "label": "gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "${fileBasename}",
+                "-o",
+                "${fileBasenameNoExtension}.out",
+                "-lm",
+                "-ansi",
+                "-pedantic",
+                "-Wall"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
     ]
-  }
+}
