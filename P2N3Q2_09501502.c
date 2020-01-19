@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-char rank(int score) {
+char *rank(int score) {
     if (score>=101) {
-        return 'S+';
+        return "S+";
     } else if (score>=90 && score<=100) {
-        return 'S';
+        return "S";
     } else if (score>=80 && score<=89) {
-        return 'A';
+        return "A";
     } else if (score>=70 && score<=79) {
-        return 'B';
+        return "B";
     } else if (score>=60 && score<=69) {
-        return 'C';
+        return "C";
     } else if (score>=0 && score<=59) {
-        return 'F';
+        return "F";
     } else {
-        return 'X';
+        return "X";
     }
 }
 
@@ -36,7 +36,16 @@ int main(void) {
     }
 
     for(j=0; j<i; j++) {
-        fprintf(fout1, "%d, %c\n", student[j], rank(eng[j]));
+        fprintf(fout1, "%d, %s\n", student[j], rank(eng[j]));
+    }
+    for(j=0; j<i; j++) {
+        fprintf(fout2, "%d, %s\n", student[j], rank(math[j]));
+    }
+    for(j=0; j<i; j++) {
+        fprintf(fout3, "%d, %s\n", student[j], rank(japa[j]));
+    }
+    for(j=0; j<i; j++) {
+        fprintf(fout4, "%d, %s\n", student[j], rank(sci[j]));
     }
 
     fclose(fin);
