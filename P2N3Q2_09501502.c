@@ -19,6 +19,7 @@ char *rank(int score) {
 }
 
 int main(void) {
+    int i, j, mem[5], student[80]={0}, eng[80]={0}, math[80]={0}, japa[80]={0}, sci[80]={0};
     FILE *fin, *fout1, *fout2, *fout3, *fout4;
     fin = fopen("score.csv", "r");
     fout1 = fopen("grade_Eng.csv", "w");
@@ -26,7 +27,6 @@ int main(void) {
     fout3 = fopen("grade_Japa.csv", "w");
     fout4 = fopen("grade_Sci.csv", "w");
 
-    int i, j, score, mem[5], student[80]={}, eng[80]={}, math[80]={}, japa[80]={}, sci[80]={};
     for(i=0; fscanf(fin, "%d, %d, %d, %d, %d", &mem[0], &mem[1], &mem[2], &mem[3], &mem[4]) != EOF; i++) {
         student[i] = mem[0];
         eng[i] = mem[1];
